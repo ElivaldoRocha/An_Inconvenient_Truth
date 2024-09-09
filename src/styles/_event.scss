@@ -1,0 +1,103 @@
+@use "variables";
+
+.event {
+  padding: 4rem;
+
+  &--resumo {
+    background-image: linear-gradient(variables.$gray1, variables.$blue1);
+  }
+
+  &--recepcao {
+    background-image: linear-gradient(variables.$blue1, variables.$gray1);
+  }
+
+  &--premios {
+    background-image: linear-gradient(variables.$gray1, variables.$blue1);
+  }
+
+  &--image-left {
+    .container {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .container {
+    display: flex;
+    gap: 4rem;
+  }
+
+  #poster {
+    width: 25rem;
+    height: auto;
+    border-radius: 1rem;
+    margin: 2rem auto;
+  }
+
+  &__image {
+    width: 20rem;
+    height: auto;
+    border-radius: 1rem;
+    margin: 0 auto;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    &__description {
+      font-size: 1.6rem;
+      text-align: justify;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    #poster {
+      width: 20rem;
+      height: auto;
+      border-radius: 1rem;
+      margin: 0rem auto;
+    }
+
+    &__details {
+      &__description {
+        font-size: 1.2rem;
+        text-align: justify;
+      }
+    }
+  }
+
+  @media (max-width: 640px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    #poster {
+      width: 20rem;
+      height: auto;
+      border-radius: 1rem;
+      margin: 0 auto;
+    }
+
+    &__details {
+      margin: 0 auto;
+      &__description {
+        font-size: 1.2rem;
+        text-align: justify;
+      }
+    }
+  }
+}
